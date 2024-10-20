@@ -4,13 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Modules</title>
+    <title>napas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
-    
+    <header>
+        <div class="header-container grid-con">
+          <nav class="nav-menu col-span-full">
+            <div class="logo">
+                <img src="img/logo.svg" alt="">
+            </div>
+      
+            <ul class="mobile-nav" id="toggle-nav">
+              <li>
+                <a href="#"><img src="img/close.svg" alt="">
+                </a>
+              </li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Experience</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+      
+            <ul>
+              <li class="hide-on-mobile"><a href="#">Projects</a></li>
+              <li class="hide-on-mobile"><a href="#">Experience</a></li>
+              <li class="hide-on-mobile"><a href="#">Contact</a></li>
+              <li class="mobile-toggle">
+                <a href="#">
+                    <img src="img/burger.svg" alt="">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+
+    <section class="grid-con" id="hero">
+        <div id="hero-text1" class="box xl-col-start-1 xl-col-end-5 l-col-start-1 l-col-end-5 col-start-1 col-end-4">
+            <p>Hero text</p>
+        </div>
+
+        <div id="hero-text2" class="box xl-col-start-1 xl-col-end-6 l-col-start-1 l-col-end-6 col-start-1 col-end-3">
+            <p>Hero text</p>
+        </div>
+
+        <div id="hero-text3" class="box xl-col-start-1 xl-col-end-9 l-col-start-1 l-col-end-9 col-start-1 col-end-5">
+            <p>Hero text</p>
+        </div>
+
+        <div id="player-container" class="col-span-full">
+            <video controls preload="metadata" poster="img/placeholder.jpg">
+                <source src="video/video.mp4" type="video/mp4">
+                <source src="video/video.webm" type="video/webm">
+                <p>Your browser does not support the video tag.</p>
+            </video>
+            <div class="video-controls hidden" id="video-controls">
+                <button id="play-button"><i class="fa fa-play-circle-o"></i></button>
+                <button id="pause-button"><i class="fa fa-pause-circle-o"></i></button>
+                <button id="stop-button"><i class="fa fa-stop-circle-o"></i></button>
+                <i class="fa fa-volume-up"></i>
+                <input type="range" id="change-vol" step="0.05" min="0" max="1" value="1">
+                <button id="full-screen"><i class="fa fa-arrows-alt"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid-con" id="about">
+        <div id="memoji" class="xl-col-start-2 xl-col-end-5 l-col-start-2 l-col-end-5">
+            <img src="img/memoji.png" alt="">
+        </div>
+
+        <div id="about-text" class="box xl-col-start-6 xl-col-end-13 l-col-start-6 l-col-end-13 col-span-full">
+            <p>About text</p>
+        </div>
+    </section>
+
+    <section class="grid-con" id="expertise">
+        <div id="expertise-ui" class="box xl-col-start-1 xl-col-end-9 l-col-start-1 l-col-end-9 col-span-full">
+            <img src="img/landing-desktop/THA MOCK2.png" alt="">
+            <p>Ui designer text</p>
+        </div>
+
+        <div id="expertise-gr" class="box xl-col-start-9 xl-col-end-13 l-col-start-9 l-col-end-13 col-span-full">
+            <img src="img/landing-desktop/SWU.png" alt="">
+            <p>Graphic designer text</p>
+        </div>
+    </section>
+
+    <section class="grid-con" id="feature-projects">
+        <div id="fea-project-title-1"
+            class="box xl-col-start-1 xl-col-end-5 l-col-start-1 l-col-end-5 col-start-1 col-end-3">
+            <p>Feature project title 1</p>
+        </div>
+
+        <div id="fea-project-title-2"
+            class="box xl-col-start-3 xl-col-end-7 l-col-start-3 l-col-end-7 col-start-2 col-end-4">
+            <p>Feature project title 2</p>
+        </div>
+
+
+
+        <div id="project1" class="box xl-col-start-1 xl-col-end-9 l-col-start-1 l-col-end-9 col-span-full">
+            <img src="img/landing-desktop/Welter-SEA.png" alt="">
+            <p>Project description</p>
+        </div>
+
+        <div id="project2" class="box xl-col-start-9 xl-col-end-13 l-col-start-9 l-col-end-13 col-span-full">
+            <img src="img/landing-desktop/NPD-project.png" alt="">
+            <p>Project description</p>
+        </div>
+
+        <div id="project3" class="box xl-col-start-1 xl-col-end-7 l-col-start-1 l-col-end-7 col-span-full">
+            <img src="img/landing-desktop/MEDPARK.png" alt="">
+            <p>Project description</p>
+        </div>
+
+        <div id="project4" class="box xl-col-start-7 xl-col-end-13 l-col-start-7 l-col-end-13 col-span-full">
+            <img src="img/landing-desktop/SKY.png" alt="">
+            <p>Project description</p>
+        </div>
+
+        <div id="project5" class="box xl-col-start-1 xl-col-end-5 l-col-start-1 l-col-end-5 col-span-full">
+            <img src="img/landing-desktop/Logo-ShopSabuy.png" alt="">
+            <p>Project description</p>
+        </div>
+
+        <div id="project2" class="box xl-col-start-5 xl-col-end-13 l-col-start-5 l-col-end-13 col-span-full">
+            <img src="img/landing-desktop/SLI.png" alt="">
+            <p>Project description</p>
+        </div>
+    </section>
+
+    <section class="grid-con" id="myinfo">
+        <div id="myinfo_text" class="box xl-col-start-1 xl-col-end-6 l-col-start-1 l-col-end-6 col-span-full">
+            <p>My info text</p>
+        </div>
+
+        <div id="profile_img" class="xl-col-start-7 xl-col-end-13 l-col-start-7 l-col-end-13 col-span-full">
+            <img src="img/landing-desktop/Profile.png" alt="">
+        </div>
+    </section>
+
+    <footer class="grid-con">
+        <div id="footer_text" class="box xl-col-start-4 xl-col-end-10 l-col-start-4 l-col-end-10 col-span-full">
+            <p>Footer text</p>
+        </div>
+    </footer>
 </body>
-<script defer type="module" src="js/main.js"></script>
+<script src="js/main.js"></script>
+
 </html>
