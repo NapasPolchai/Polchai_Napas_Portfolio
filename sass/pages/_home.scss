@@ -1,7 +1,50 @@
+#hero-text1 {
+    font-family: poppins;
+    font-size: 72px;
+    font-weight: 400;
+    margin-top: 128px;
+}
+
+#hero-text2 {
+    font-family: poppins;
+    font-size: 72px;
+    font-weight: 400;
+}
+
+#hero-text3 {
+    font-family: poppins;
+    font-size: 72px;
+    font-weight: 400;
+    margin-bottom: 128px;
+}
+
+#about {
+    margin-top: 128px;
+    margin-bottom: 128px;
+}
+
+#about-text {
+    font-family: poppins;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 174px;
+}
+
+#memoji {
+    margin-top: 142px;
+}
+
+.image {
+    border-radius: 24px;
+}
+
+//* Video part *//
+
 #player-container {
     position: relative;
     display: flex;
     flex-direction: column;
+    border-radius: 24px;
 
     .video-controls.hidden {
         display: none;
