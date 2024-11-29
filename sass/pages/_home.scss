@@ -1,5 +1,58 @@
 @use '../base/' as a;
 
+video {
+    border-radius: 24px;
+}
+
+#status-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    width: 150px;
+    height: 22px;
+    background-color: rgb(108, 237, 191, 0.16);
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 20px;
+}
+
+#status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    opacity: 100%;
+}
+
+#status-indicator.online {
+    background-color: #4caf50;
+    /* Green for online */
+}
+
+#status-text {
+    font-size: 14px;
+    letter-spacing: 3.36px;
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 1;
+    font-weight: 300;
+    margin-left: 32px;
+}
+
+#about {
+    margin-bottom: 128px;
+}
+
+#about-text {
+    font-family: poppins;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 128px;
+}
+
 img {
     border-radius: 24px;
 }
@@ -25,6 +78,7 @@ img {
 .profile {
     margin: 72px 0;
     align-items: center;
+    width: 100%;
 }
 
 #memoji {
@@ -93,16 +147,19 @@ footer {
 
     .footer-con {
         h2 {
-            font-size: 72px;
-            line-height: 72px;
+            font-size: 128px;
+            line-height: 128px;
         }
 
     }
 
     .tell {
-        font-size: 72px;
+        font-size: 128px;
         border-radius: 90px;
         text-transform: uppercase;
+        padding-left: 41px;
+        padding-right: 41px;
+        margin-top: 24px;
     }
 
     .contact {
@@ -174,7 +231,6 @@ footer {
     position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 24px;
 
     .video-controls.hidden {
         display: none;
@@ -189,6 +245,7 @@ footer {
         transition: all 0.2s ease;
         background-color: rgb(51, 51, 51, 0.32);
         display: flex;
+        border-radius: 0px 0px 24px 24px;
     }
 
     .video-controls.hide {
