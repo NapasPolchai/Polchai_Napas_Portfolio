@@ -46,7 +46,7 @@
         <section class="grid-con">
             <div class="hero-text col-span-full">
                 <h1>Web <span>Designer</span>
-                    <br> <img src="#" alt="">with a <br>
+                    <br> <img src="img/reel:.gif" alt="" id="reel">with a <br>
                     Graphic <span>Design</span> Edge
                 </h1>
             </div>
@@ -54,16 +54,32 @@
 
         <section>
             <div class="grid-con">
-                <div class="col-span-full video-play">
-
+                <div id="player-container" class="col-span-full">
+                    <video controls preload="metadata" poster="img/placeholder.jpg">
+                        <source src="video/video.mp4" type="video/mp4">
+                        <source src="video/video.webm" type="video/webm">
+                        <p>Your browser does not support the video tag.</p>
+                    </video>
+                    <div class="video-controls hidden" id="video-controls">
+                        <button id="play-button"><i class="fa fa-play-circle-o"></i></button>
+                        <button id="pause-button"><i class="fa fa-pause-circle-o"></i></button>
+                        <button id="stop-button"><i class="fa fa-stop-circle-o"></i></button>
+                        <i class="fa fa-volume-up"></i>
+                        <input type="range" id="change-vol" step="0.05" min="0" max="1" value="1">
+                        <button id="full-screen"><i class="fa fa-arrows-alt"></i></button>
+                    </div>
                 </div>
 
             </div>
         </section>
 
         <section>
-            <div class="grid-con">
-                <h2 class="col-span-full l-col-start-5 l-col-span-8 profile">
+            <div class="grid-con profile">
+                <div id="memoji" class="xl-col-start-2 xl-col-end-5 l-col-start-2 l-col-end-5">
+                    <img src="img/memoji.png" alt="">
+                </div>
+
+                <h2 class="xl-col-start-6 xl-col-end-13 l-col-start-6 l-col-end-13 col-span-full">
                     From Nonthaburi, Thailand. Former Graphic <span>Designer </span>and Photographer turned to Web
                     <span>Designer </span>, with a
                     love for <span> design</span>. Wherever it is, I’d rather be on wheels.
@@ -74,7 +90,7 @@
         <section id="bg-black">
             <div class="grid-con content">
                 <div class="col-span-full l-col-start-1 l-col-span-8 skills">
-                    <img src="img/placeholder.jpg" alt="">
+                    <img src="img/landing-desktop/THA MOCK2.png" alt="">
                     <p>
                         <span class="bold"> Ui / UX Design - </span> 4 years of experience as a UI / UX designer. I
                         worked with many types of clients
@@ -83,7 +99,7 @@
                 </div>
 
                 <div class="col-span-full l-col-start-9 l-col-span-4 skills">
-                    <img src="img/placeholder.jpg" alt="">
+                    <img src="img/landing-desktop/SWU.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
                         designer.
@@ -95,50 +111,52 @@
                 </div>
 
                 <div class="col-span-full l-col-start-1 l-col-span-8">
-                    <img src="img/place-holder-img.png" alt="">
+                    <img src="img/landing-desktop/Welter-SEA.png" alt="">
                     <p>
-                        <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
-                        designer.
+                        <span class="bold">Ui / UX Design</span> - 4 years of experience as a UI / UX
+                        designer. I worked with many types of clients such as hospitals, Interior design companies,
+                        Jewelry brands, and Insurance companies.
                     </p>
                 </div>
 
                 <div class="col-span-full l-col-start-9 l-col-span-4">
-                    <img src="img/place-holder-img.png" alt="">
+                    <img src="img/landing-desktop/NPD-project.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
                         designer.
                     </p>
                 </div>
 
-                <div class="col-span-full l-col-start-1 l-col-span-8">
-                    <img src="img/place-holder-img.png" alt="">
+                <div class="xl-col-start-1 xl-col-end-7 l-col-start-1 l-col-end-7 col-span-full">
+                    <img src="img/landing-desktop/MEDPARK.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
                         designer.
                     </p>
                 </div>
 
-                <div class="col-span-full l-col-start-9 l-col-span-4">
-                    <img src="img/place-holder-img.png" alt="">
+                <div class="xl-col-start-7 xl-col-end-13 l-col-start-7 l-col-end-13 col-span-full">
+                    <img src="img/landing-desktop/SKY.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
                         designer.
                     </p>
                 </div>
 
-                <div class="col-span-full l-col-start-1 l-col-span-8">
-                    <img src="img/place-holder-img.png" alt="">
+                <div class="xl-col-start-1 xl-col-end-5 l-col-start-1 l-col-end-5 col-span-full">
+                    <img src="img/landing-desktop/Logo-ShopSabuy.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
                         designer.
                     </p>
                 </div>
 
-                <div class="col-span-full l-col-start-9 l-col-span-4">
-                    <img src="img/place-holder-img.png" alt="">
+                <div class="xl-col-start-5 xl-col-end-13 l-col-start-5 l-col-end-13 col-span-full">
+                    <img src="img/landing-desktop/SLI.png" alt="">
                     <p>
-                        <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
-                        designer.
+                        <span class="bold">Ui / UX Design</span> - 4 years of experience as a UI / UX
+                        designer. I worked with many types of clients such as hospitals, Interior design companies,
+                        Jewelry brands, and Insurance companies.
                     </p>
                 </div>
 
