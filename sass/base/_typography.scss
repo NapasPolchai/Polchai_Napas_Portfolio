@@ -3,4 +3,40 @@
 
 body {
     font-family: $font-primary;
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        line-height: 24px;
+    }
+
+    span {
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    .bold {
+        font-weight: 600;
+    }
+
+    .colour {
+        color: #6CEDBF;
+    }
+
+    .spesh-p {
+        font-size: 1rem;
+        font-weight: 200;
+        opacity: 0.32;
+        letter-spacing: 4px;
+    }
 }
