@@ -1,3 +1,7 @@
+.hero-text {
+    line-height: 72px;
+}
+
 .contact-underline {
     border: 0.1px solid #707070;
     opacity: 1;
@@ -22,4 +26,75 @@
         border-radius: 32px;
         text-align: center;
     }
+}
+
+.single-line-form {
+    margin: 0;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 72px;
+    position: relative; /* For underline styling */
+    width: 100%; /* Ensure form-group spans full width */
+}
+
+.form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full-width underline */
+    height: 1px; /* Underline thickness */
+    background-color: rgb(112, 112, 112, 0.16); /* Match existing color */
+}
+
+label {
+    margin-right: 0px;
+    font-size: 32px;
+    font-weight: 400;
+    opacity: 0.16;
+    white-space: nowrap; /* Keeps label on one line */
+}
+
+input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    padding: 16px;
+}
+
+input:focus {
+    border-bottom: 2px solid #007bff; /* Highlight underline on focus */
+}
+
+#submit {
+    font-size: 72px;
+    padding: 0px 85px;
+    border-radius: 90px;
+    margin-top: 0px;
+    font-weight: 400;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+#buttom-part {
+    align-items: start;
+    margin-top: 128px;
+}
+
+#contact-memoji {
+    margin-bottom: -7px;
 }
