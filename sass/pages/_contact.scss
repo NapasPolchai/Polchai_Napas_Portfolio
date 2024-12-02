@@ -1,12 +1,15 @@
-.hero-text {
+
+
+.hero-contact-text {
     line-height: 72px;
+    margin-top: 72px;
 }
 
 .contact-underline {
     border: 0.1px solid #707070;
     opacity: 1;
     margin-top: 72px;
-    margin-bottom: 0px;
+    margin-bottom: 72px;
 }
 
 .contact-text {
@@ -79,7 +82,6 @@ input:focus {
 }
 
 button {
-    background-color: #5cb85c;
     color: white;
     border: none;
     font-size: 16px;
@@ -87,7 +89,7 @@ button {
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: none;
 }
 
 #buttom-part {
