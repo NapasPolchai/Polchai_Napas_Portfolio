@@ -125,3 +125,39 @@ function hideMobileNav() {
 
 showMobileNavButton.addEventListener("click", showMobileNav);
 hideMobileNavButton.addEventListener("click", hideMobileNav);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Hero text animation
+    gsap.from("#hero-text1 h1", { 
+        duration: 1.5, 
+        opacity: 0, 
+        x: -50, 
+        stagger: 0.3 
+    });
+
+    gsap.from("#hero-text2 h1, #hero-text3 h1", { 
+        duration: 1.5, 
+        opacity: 0, 
+        x: 50, 
+        delay: 0.5, 
+        stagger: 0.3 
+    });
+
+    // Featured projects fade-in
+    gsap.from(".content img", { 
+        duration: 1, 
+        opacity: 0, 
+        scale: 0.8, 
+        stagger: 0.2, 
+        delay: 1 
+    });
+
+    // Footer slide-up
+    gsap.from("footer", { 
+        duration: 1, 
+        opacity: 0, 
+        y: 50, 
+        delay: 1.5 
+    });
+});
