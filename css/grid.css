@@ -53,7 +53,7 @@ body, p, h1, h2, h3, h4, h5 {
  .grid-con { 
    display: grid;
    grid-template-columns: repeat(4, minmax(0, 1fr));
-   grid-column-gap: 30px;
+   grid-column-gap: 10px;
    max-width: 1200px;
    margin: 0 auto;
    padding-left: 15px;
@@ -205,7 +205,7 @@ body, p, h1, h2, h3, h4, h5 {
    .grid-con { 
       display: grid; 
       grid-template-columns: repeat(12, minmax(0, 1fr));
-      grid-column-gap: 34px;
+      grid-column-gap: 30px;
       padding-left: 17px;
       padding-right: 17px;
    }

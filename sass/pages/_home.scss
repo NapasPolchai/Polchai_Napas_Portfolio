@@ -1,818 +1,466 @@
 @use '../base/' as a;
 
-video {
-    border-radius: 24px;
-}
+body {
+    .hide-mob {
+        display: none;
+    }
 
-#status-bar {
-    display: flex;
-    align-items: center;
-    margin-bottom: 24px;
-    width: 128px;
-    height: 22px;
-    background-color: rgb(108, 237, 191, 0.16);
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    border-radius: 20px;
-    gap: 6px;
-}
+    .hero {
+        margin-top: 128px;
+        margin-bottom: 128px;
 
-#status-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    opacity: 100%;
-    background-color: #6CEDBF;
-}
+        h2 {
+            font-size: 32px;
+            font-weight: 400;
 
-#status-text {
-    font-size: 14px;
-    letter-spacing: 3.36px;
-    color: #000000;
-    text-transform: uppercase;
-    font-style: normal;
-    opacity: 1;
-    font-weight: 300;
-    margin-top: 1px;
-}
+            span {
+                font-style: italic;
+                font-weight: 300;
+            }
+        }
 
-#about {
-    margin-bottom: 128px;
-}
-
-#about-text {
-    font-family: poppins;
-    font-size: 32px;
-    font-weight: 400;
-    margin-top: 128px;
-}
-
-img {
-    border-radius: 24px;
-}
-
-#reel {
-    margin-top: 8px;
-    margin-right: 30px;
-    height: 110px;
-    width: 100%;
-    border-radius: 72px;
-    object-fit: cover;
-}
-
-// .hero-text {
-//     margin-top: 128px;
-// }
-
-#hero-text1 {
-    font-family: poppins;
-    font-weight: 400;
-    margin-top: 128px;
-}
-
-#hero-text2 {
-    font-family: poppins;
-    font-size: 72px;
-    font-weight: 400;
-    margin-top: 32px;
-}
-
-#hero-text3 {
-    font-family: poppins;
-    font-size: 72px;
-    font-weight: 400;
-    margin-top: 8px;
-    margin-bottom: 128px;
-}
-
-.video-play {
-    width: 100%;
-    height: 542px;
-    background-color: beige;
-}
-
-.profile {
-    margin: 72px 0;
-    align-items: center;
-    width: 100%;
-}
-
-#memoji {
-    margin-top: 142px;
-    margin-bottom: 142px;
-    transition: transform 0.8s ease; /* Smooth rotation */
-}
-
-#memoji:hover {
-    transform: rotate(15deg);
-}
-
-#bg-black {
-    background-color: #000;
-    color: #fff;
-    width: 100%;
-    margin-top: 72px;
-    border-radius: 24px;
-
-    .content {
-        position: relative;
-        top: -256px;
-        margin-bottom: -256px;
-
-        .skills {
-
+        #reel {
             img {
-                border-radius: 16px;
+                border-radius: 50px;
+                width: 100%;
+                height: 45px;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+    #player-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            .video-controls {
+                opacity: 1;
+            }
+        }
+    }
+    
+    .video-controls.hidden {
+      display: none;
+    }
+    
+    .video-controls {
+        right: 0;
+        left: 0;
+        padding: 20px;
+        position: absolute;
+        bottom: 0px;
+        transition: all 0.2s ease;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+        display: flex;
+        opacity: 1;
+
+        @media screen and (max-width: 540px) {
+            padding: 12px 8px;
+
+            button {
+                padding: 0;
+                margin: 0;
+            }
+
+            .fa {
+                font-size: 16px;
+                margin-left: 0;
+            }
+        }
+      }
+      
+      .video-controls.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+    
+      button {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+      }
+    
+      .fa, .fa-solid {
+        color: #fff;
+        font-size: 28px;
+        margin-left: 20px;
+      } 
+    
+      .fa-stop-circle-o {
+        margin-right: 20px;
+      }
+    
+      .fa-volume-up {
+        margin-left: auto;
+      }
+    
+      /* range inputs are a pain to style
+      
+      https://range-input-css.netlify.app/
+      
+      */
+    
+      /*********** Baseline, reset styles ***********/
+    input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+        width: 15rem;
+      }
+      
+      /* Removes default focus */
+      input[type="range"]:focus {
+        outline: none;
+      }
+      
+      /******** Chrome, Safari, Opera and Edge Chromium styles ********/
+      /* slider track */
+      input[type="range"]::-webkit-slider-runnable-track {
+        background-color: #ffffff;
+        border-radius: 0.5rem;
+        height: 0.5rem;
+      }
+      
+      /* slider thumb */
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        margin-top: -4px; /* Centers thumb on the track */
+        background-color: #808080;
+        border-radius: 0.5rem;
+        height: 1rem;
+        width: 1rem;
+      }
+      
+      input[type="range"]:focus::-webkit-slider-thumb {
+        outline: 3px solid #808080;
+        outline-offset: 0.125rem;
+      }
+      
+      /*********** Firefox styles ***********/
+      /* slider track */
+      input[type="range"]::-moz-range-track {
+        background-color: #ffffff;
+        border-radius: 0.5rem;
+        height: 0.5rem;
+      }
+      
+      /* slider thumb */
+      input[type="range"]::-moz-range-thumb {
+        background-color: #808080;
+        border: none; /*Removes extra border that FF applies*/
+        border-radius: 0.5rem;
+        height: 1rem;
+        width: 1rem;
+      }
+      
+      input[type="range"]:focus::-moz-range-thumb{
+        outline: 3px solid #808080;
+        outline-offset: 0.125rem;
+      }
+
+    
+
+    #about {
+        margin-bottom: 128px;
+        margin-top: 128px;
+
+        #about-text {
+            font-family: poppins;
+            font-size: 32px;
+            font-weight: 400;
+            margin-top: 128px;
+        }
+
+        #status-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            width: 128px;
+            height: 22px;
+            background-color: rgb(108, 237, 191, 0.16);
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-radius: 20px;
+            gap: 6px;
+        }
+
+        #status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 100%;
+            background-color: #6CEDBF;
+        }
+
+        #status-text {
+            font-size: 14px;
+            letter-spacing: 3.36px;
+            color: #000000;
+            text-transform: uppercase;
+            font-style: normal;
+            opacity: 1;
+            font-weight: 300;
+            margin-top: 1px;
+        }
+    }
+
+
+    #bg-black-1 {
+        background-color: #000;
+        color: #fff;
+        margin-top: 144px;
+        border-radius: 24px;
+
+        #skill-1 {
+            position: relative;
+
+            .ui-img-1 {
+                height: 494px;
+                position: absolute;
+                top: -200px;
+                margin-top: 128px;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+
+                }
 
             }
 
             p {
-                margin: 32px 0 48px 0;
+                margin-top: 452px;
+                margin-bottom: 48px;
+                width: 100%;
+            }
+        }
+
+        .skills {
+            p {
+                width: 100%;
+                margin-bottom: 128px;
+            }
+        }
+
+    }
+
+    .fea-head {
+        margin-bottom: 72px;
+
+        h2 {
+
+
+
+            span {
+                font-size: 32px;
+                font-weight: 400;
+            }
+
+
+            .move {
+                font-weight: 300;
+                margin-left: 72px;
             }
         }
     }
 
-    .second-span {
-        margin-left: 84px;
-    }
-
-    h2 {
-        margin-top: 56px;
-        margin-bottom: 72px;
-    }
-
-}
-
-.prof-skill {
-    margin-top: 128px;
-
-    .prof-text {
-        h2 {
-            margin-bottom: 48px;
-        }
-
-        .spesh-p {
-            max-width: 70%;
-        }
-
+    .card {
         img {
-            margin-top: 72px;
-        }
-    }
-}
-
-footer {
-    background-color: #000000;
-    color: #fff;
-    text-align: center;
-    padding: 128px 0;
-
-    .footer-con {
-        h2 {
-            font-size: 128px;
-            line-height: 128px;
+            height: 494px;
+            object-fit: cover;
+            width: 100%;
         }
 
-    }
-
-    .tell {
-        font-size: 128px;
-        border-radius: 90px;
-        text-transform: uppercase;
-        padding-left: 41px;
-        padding-right: 41px;
-        margin-top: 24px;
-    }
-
-    .contact {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-top: 72px;
-    }
-}
-
-
-@media screen and (min-width: 768px) {
-
-    .hero-text {
-        h1 {
-            font-size: 72px;
+        p {
+            width: 100%;
         }
     }
 
     .prof-skill {
-        margin-bottom: 128px;
+        img {
+            border-radius: 0;
+            margin-bottom: -7px;
+        }
+    }
 
-        .prof-text {
-            display: flex;
-            justify-content: space-between;
-            align-content: center;
-            align-items: center;
+    .prof-text {
+        .text {
+            margin-top: 72px;
 
-            .text {
-                flex: 1;
 
-                h2 {
-                    font-size: 72px;
-                    margin-right: 82px;
-                    line-height: 72px;
+            p {
+                margin: 0;
+                width: 100%;
+                margin-bottom: 72px;
+            }
+
+            .spesh-p {
+                margin-bottom: 0;
+            }
+
+            h2 {
+                margin-bottom: 48px;
+            }
+
+        }
+    }
+
+
+}
+
+
+@media screen and (min-width: 768px) {
+    body {
+
+        .hide-desk {
+            display: none;
+        }
+
+        .hide-mob {
+            display: block;
+        }
+
+        .hero {
+
+
+            h2 {
+                font-size: 72px;
+
+                span {
+                    font-weight: 300;
+                }
+
+            }
+
+            #reel {
+                margin-top: 8px;
+
+                img {
+
+                    height: 101px;
+
+
+                }
+            }
+        }
+
+        #memoji {
+            display: block;
+            margin-top: 142px;
+            margin-bottom: 142px;
+            transition: transform 0.8s ease;
+            width: 100%;
+            height: 200px;
+        }
+
+        #memoji:hover {
+            transform: scale(1.1);
+        }
+
+        #bg-black-1 {
+            background-color: #000;
+            color: #fff;
+            margin-top: 144px;
+
+            #skill-1 {
+                p {
+                    width: 80%;
+                }
+            }
+
+            #skill-2 {
+                position: relative;
+
+                .ui-img-1 {
+                    height: 494px;
+                    position: absolute;
+                    top: -200px;
+                    margin-top: 128px;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+
+                    }
+
                 }
 
                 p {
-                    margin-right: 82px;
+                    margin-top: 454px;
+                }
+
+
+            }
+
+            .skills {
+                p {
+                    width: 100%;
+                    margin-bottom: 128px;
                 }
             }
 
+        }
+
+        .prof-skill {
+            padding: 128px 0 128px 0;
             img {
-                margin-top: 0;
-                flex: 2;
-                max-width: 540px;
-                border-radius: 32px;
-
+                width: 100%;
+                border-radius: 24px;
             }
         }
 
-        footer {
-            .contact {
-                display: flex;
-                flex-direction: row;
-                gap: 16px;
-                margin-top: 72px;
+        .prof-text {
+  
+            .text {
+                margin-top: 128px;
+    
+    
+                p {
+                    margin: 0;
+                    width: 100%;
+                    margin-bottom: 72px;
+                }
+    
+                .spesh-p {
+                    margin-bottom: 24px;
+                }
+    
+                h2 {
+                    margin-bottom: 48px;
+                    font-size: 72px;
+                    line-height: 1;
+                }
+    
             }
         }
 
-    }
+        .fea-head {
+            margin-bottom: 72px;
+    
+            h2 {
+    
+    
+    
+                span {
+                    font-size: 72px;
+                    font-weight: 400;
+                }
+    
+    
+                .move {
+                    font-weight: 300;
+                    margin-left: 72px;
+                }
+            }
+        }
 
 
-}
-
-
-/* Video Container */
-.video-container {
-    position: relative;
-    width: 100%;
-    background: #000;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Video Player */
-.video-player {
-    width: 100%;
-    display: block;
-}
-
-#video {
-    border-radius: 0px 0px;
-}
-
-/* Controls */
-.controls {
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    background: rgba(51, 51, 51, 0.8);
-    color: #fff;
-    border-radius: 0 0 24px 24px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-}
-
-/* Play & Pause Button */
-.play-btn,
-.fullscreen-btn {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    font-style: normal;
-    /* Increased size for icons */
-    cursor: pointer;
-    margin-right: 10px;
-    transition: opacity 0.3s;
-}
-
-.play-btn i,
-.fullscreen-btn i {
-    font-size: 24px;
-    color: #fff;
-    font-style: normal;
-    /* Remove any italic styling on the icon */
-}
-
-/* Progress Bar */
-.progress-container {
-    flex: 1;
-    height: 6px;
-    background: #555;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.progress-bar {
-    height: 100%;
-    width: 0;
-    background: #4f4f4f;
-    transition: width 0.1s ease;
-}
-
-/* Volume Slider */
-.volume-slider {
-    margin-right: 10px;
-    cursor: pointer;
-    background: #4f4f4f;
-}
-
-/* Fullscreen Button */
-.fullscreen-btn {
-    font-size: 24px;
-    font-style: normal;
-    /* Increase icon size */
-    transition: opacity 0.3s;
-}
-
-.fullscreen-btn:hover {
-    opacity: 0.8;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .controls {
-        padding: 12px;
-    }
-
-    .play-btn i,
-    .fullscreen-btn i {
-        font-size: 24px;
-        color: #fff;
-        font-style: normal;
-        /* Remove any italic styling on the icon */
-    }
-
-    .progress-container {
-        height: 5px;
-        /* Slightly thinner progress bar on small screens */
-    }
-
-    .volume-slider {
-        width: 48px;
     }
 }
-
-
-//* Video part *//
-
-// #player-container {
-//     position: relative;
-//     display: flex;
-//     flex-direction: column;
-
-//     .video-controls.hidden {
-//         display: none;
-//     }
-
-//     .video-controls {
-//         right: 0;
-//         left: 0;
-//         padding: 20px;
-//         position: absolute;
-//         bottom: 0px;
-//         transition: all 0.2s ease;
-//         background-color: rgb(51, 51, 51, 0.32);
-//         display: flex;
-//         border-radius: 0px 0px 24px 24px;
-//     }
-
-//     .video-controls.hide {
-//         opacity: 0;
-//         pointer-events: none;
-//     }
-
-//     button {
-//         padding: 0;
-//         border: 0;
-//         background-color: transparent;
-//     }
-
-//     .fa,
-//     .fa-solid {
-//         color: #ffffff;
-//         font-size: 28px;
-//         margin-left: 20px;
-//     }
-
-//     .fa-stop-circle-o {
-//         margin-right: 20px;
-//     }
-
-//     .fa-volume-up {
-//         margin-left: auto;
-//         margin-right: 16px;
-//     }
-
-//     /* range inputs are a pain to style
-
-//   https://range-input-css.netlify.app/
-
-//   */
-
-//     /*********** Baseline, reset styles ***********/
-//     input[type="range"] {
-//         -webkit-appearance: none;
-//         appearance: none;
-//         background: transparent;
-//         cursor: pointer;
-//         width: 15rem;
-//     }
-
-//     /* Removes default focus */
-//     input[type="range"]:focus {
-//         outline: none;
-//     }
-
-//     /******** Chrome, Safari, Opera and Edge Chromium styles ********/
-//     /* slider track */
-//     input[type="range"]::-webkit-slider-runnable-track {
-//         background-color: rgb(190, 190, 190);
-//         border-radius: 0.5rem;
-//         height: 0.5rem;
-//     }
-
-//     /* slider thumb */
-//     input[type="range"]::-webkit-slider-thumb {
-//         -webkit-appearance: none;
-//         /* Override default look */
-//         appearance: none;
-//         margin-top: -4px;
-//         /* Centers thumb on the track */
-//         background-color: #ffffff;
-//         border-radius: 0.5rem;
-//         height: 1rem;
-//         width: 1rem;
-//     }
-
-//     input[type="range"]:focus::-webkit-slider-thumb {
-//         outline: 3px solid #ffffff;
-//         outline-offset: 0.125rem;
-//     }
-
-//     /*********** Firefox styles ***********/
-//     /* slider track */
-//     input[type="range"]::-moz-range-track {
-//         background-color: #ffffff;
-//         border-radius: 0.5rem;
-//         height: 0.5rem;
-//     }
-
-//     /* slider thumb */
-//     input[type="range"]::-moz-range-thumb {
-//         background-color: #808080;
-//         border: none;
-//         /*Removes extra border that FF applies*/
-//         border-radius: 0.5rem;
-//         height: 1rem;
-//         width: 1rem;
-//     }
-
-//     input[type="range"]:focus::-moz-range-thumb {
-//         outline: 3px solid #808080;
-//         outline-offset: 0.125rem;
-//     }
-
-// }
-
-
-
-// #hero-text1 {
-//     font-family: poppins;
-//     font-size: 72px;
-//     font-weight: 400;
-//     margin-top: 128px;
-// }
-
-// #hero-text2 {
-//     font-family: poppins;
-//     font-size: 72px;
-//     font-weight: 400;
-// }
-
-// #hero-text3 {
-//     font-family: poppins;
-//     font-size: 72px;
-//     font-weight: 400;
-//     margin-bottom: 128px;
-// }
-
-// #hero-gif {
-//     height: 101px;
-//     background-color: #000000;
-//     border-radius: 50px;
-//     background-image: url(../img/reel/.gif);
-// }
-
-// #about {
-//     margin-bottom: 128px;
-// }
-
-// #about-text {
-//     font-family: poppins;
-//     font-size: 32px;
-//     font-weight: 400;
-//     margin-top: 128px;
-// }
-
-// .card-text {
-//     width: 80%;
-//     margin-top: 32px;
-//     margin-bottom: 72px;
-//     color: #FFFFFF;
-//     opacity: 0.72;
-// }
-
-// #fea-project-title-1 {
-//     font-family: poppins;
-//     font-size: 72px;
-//     font-weight: 400;
-//     margin-top: 56px;
-//     color: white;
-// }
-
-// #fea-project-title-2 {
-//     font-family: poppins;
-//     font-size: 72px;
-//     font-weight: 300;
-//     margin-top: 0px;
-//     margin-bottom: 72px;
-//     font-style: italic;
-//     color: white;
-// }
-
-// #memoji {
-//     margin-top: 142px;
-// }
-
-// #myinfo {
-//     margin-bottom: 128px;
-//     margin-top: 128px;
-// }
-
-// #myinfo_title-des {
-//     font-size: 16px;
-//     font-weight: 300;
-//     margin-top: 128px;
-//     margin-bottom: 24px;
-//     line-height: 1;
-//     text-transform: uppercase;
-//     letter-spacing: 3.84px;
-//     opacity: 0.32;
-// }
-
-// #myinfo_title {
-//     font-size: 72px;
-//     font-weight: 300;
-//     line-height: 1;
-//     margin-bottom: 48px;
-//     font-style: italic;
-// }
-
-// #status-bar {
-//     display: flex;
-//     align-items: center;
-//     margin-bottom: 24px;
-//     width: 150px;
-//     height: 22px;
-//     background-color: rgb(108, 237, 191, 0.16);
-//     padding-left: 8px;
-//     padding-right: 8px;
-//     padding-top: 1px;
-//     padding-bottom: 1px;
-//     border-radius: 20px;
-// }
-
-// #status-indicator {
-//     width: 10px;
-//     height: 10px;
-//     border-radius: 50%;
-//     margin-right: 8px;
-//     opacity: 100%;
-// }
-
-// #status-indicator.online {
-//     background-color: #4caf50;
-//     /* Green for online */
-// }
-
-// #status-text {
-//     font-size: 14px;
-//     letter-spacing: 3.36px;
-//     color: #000000;
-//     text-transform: uppercase;
-//     opacity: 1;
-//     font-weight: 300;
-//     margin-left: 32px;
-// }
-
-// img {
-//     border-radius: 24px;
-// }
-
-// footer {
-//     background-color: #000000;
-//     width: 100%;
-//     margin: 0;
-//     padding: 0;
-//     display: grid;
-//     align-items: center;
-//     box-sizing: border-box;
-// }
-
-// #footer_text1 {
-//     text-align: center;
-//     font-size: 128px;
-//     letter-spacing: 0px;
-//     color: #FFFFFF;
-//     margin-top: 128px;
-// }
-
-// #footer_text2 {
-//     text-align: center;
-//     font-size: 128px;
-//     letter-spacing: 0px;
-//     color: #FFFFFF;
-//     font-style: italic;
-//     font-weight: 300;
-//     margin-top: -72px;
-// }
-
-// #footer_text3 {
-//     text-align: center;
-//     font-size: 128px;
-//     letter-spacing: 0px;
-//     color: #FFFFFF;
-//     margin-top: -16px;
-//     text-transform: uppercase;
-//     border: 1px solid #FFFFFF;
-//     border-radius: 120px;
-//     opacity: 1;
-//     margin-bottom: 128px;
-// }
-
-// #email {
-//     text-align: center;
-//     font-size: 16px;
-//     letter-spacing: 0px;
-//     color: #FFFFFF;
-//     margin-top: -16px;
-//     border: 1px solid #FFFFFF;
-//     border-radius: 120px;
-//     opacity: 0.5;
-//     margin-bottom: 48px;
-// }
-
-// #phone {
-//     text-align: center;
-//     font-size: 16px;
-//     letter-spacing: 0px;
-//     color: #FFFFFF;
-//     margin-top: -16px;
-//     border: 1px solid #FFFFFF;
-//     border-radius: 120px;
-//     opacity: 0.5;
-//     margin-bottom: 48px;
-// }
-
-
-// //* Video part *//
-
-// #player-container {
-//     position: relative;
-//     display: flex;
-//     flex-direction: column;
-//     border-radius: 24px;
-
-//     .video-controls.hidden {
-//         display: none;
-//     }
-
-//     .video-controls {
-//         right: 0;
-//         left: 0;
-//         padding: 20px;
-//         position: absolute;
-//         bottom: 0px;
-//         transition: all 0.2s ease;
-//         background-color: rgba(108, 237, 191, 0.3);
-//         display: flex;
-//     }
-
-//     .video-controls.hide {
-//         opacity: 0;
-//         pointer-events: none;
-//     }
-
-//     button {
-//         padding: 0;
-//         border: 0;
-//         background-color: transparent;
-//     }
-
-//     .fa,
-//     .fa-solid {
-//         color: #ffffff;
-//         font-size: 28px;
-//         margin-left: 20px;
-//     }
-
-//     .fa-stop-circle-o {
-//         margin-right: 20px;
-//     }
-
-//     .fa-volume-up {
-//         margin-left: auto;
-//         margin-right: 16px;
-//     }
-
-//     /* range inputs are a pain to style
-
-//   https://range-input-css.netlify.app/
-
-//   */
-
-//     /*********** Baseline, reset styles ***********/
-//     input[type="range"] {
-//         -webkit-appearance: none;
-//         appearance: none;
-//         background: transparent;
-//         cursor: pointer;
-//         width: 15rem;
-//     }
-
-//     /* Removes default focus */
-//     input[type="range"]:focus {
-//         outline: none;
-//     }
-
-//     /******** Chrome, Safari, Opera and Edge Chromium styles ********/
-//     /* slider track */
-//     input[type="range"]::-webkit-slider-runnable-track {
-//         background-color: #6CEDBF;
-//         border-radius: 0.5rem;
-//         height: 0.5rem;
-//     }
-
-//     /* slider thumb */
-//     input[type="range"]::-webkit-slider-thumb {
-//         -webkit-appearance: none;
-//         /* Override default look */
-//         appearance: none;
-//         margin-top: -4px;
-//         /* Centers thumb on the track */
-//         background-color: #ffffff;
-//         border-radius: 0.5rem;
-//         height: 1rem;
-//         width: 1rem;
-//     }
-
-//     input[type="range"]:focus::-webkit-slider-thumb {
-//         outline: 3px solid #ffffff;
-//         outline-offset: 0.125rem;
-//     }
-
-//     /*********** Firefox styles ***********/
-//     /* slider track */
-//     input[type="range"]::-moz-range-track {
-//         background-color: #ffffff;
-//         border-radius: 0.5rem;
-//         height: 0.5rem;
-//     }
-
-//     /* slider thumb */
-//     input[type="range"]::-moz-range-thumb {
-//         background-color: #808080;
-//         border: none;
-//         /*Removes extra border that FF applies*/
-//         border-radius: 0.5rem;
-//         height: 1rem;
-//         width: 1rem;
-//     }
-
-//     input[type="range"]:focus::-moz-range-thumb {
-//         outline: 3px solid #808080;
-//         outline-offset: 0.125rem;
-//     }
-
-// }
-
-// .section-black-bg {
-//     background-color: #000000;
-//     margin-top: 32px;
-// }
