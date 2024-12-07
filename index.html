@@ -19,10 +19,10 @@
                     <a href="index.html"><img src="img/logo.svg" alt=""></a>
                 </div>
 
-                <ul class="mobile-nav" id="toggle-nav">
+                <ul class="mobile-nav" id="mobileNav">
                     <li>
-                        <a href="#"><img src="img/close.svg" alt="">
-                        </a>
+                        <div id="mobileNavCloseBtn"><img src="img/close.svg" alt="">
+                        </div>
                     </li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="experiences.html">Experience</a></li>
@@ -34,9 +34,9 @@
                     <li class="hide-on-mobile"><a href="experiences.html">Experience</a></li>
                     <li class="hide-on-mobile"><a href="contact.html">Contact</a></li>
                     <li class="mobile-toggle">
-                        <a href="#">
+                        <div id="hamburgerBtn">
                             <img src="img/burger.svg" alt="">
-                        </a>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -44,22 +44,23 @@
     </header>
 
     <main>
-        <section class="grid-con">
+        <section class="grid-con hero">
+            <h1 class="hidden">This is my portfolio</h1>
 
-            <div id="hero-text1" class="xl-col-start-1 xl-col-end-7 l-col-start-1 l-col-end-7 col-start-1 col-end-4">
-                <h1>Web <span>Designer</span></h1>
+            <div id="hero-text1" class="l-col-start-1 l-col-end-7 col-span-full">
+                <h2>Web <span>Designer</span></h2>
             </div>
-    
-            <div class="xl-col-start-1 xl-col-end-4 l-col-start-1 l-col-end-4 col-start-1 col-end-2">
-                <img src="img/reel:.gif" alt="" id="reel">
+
+            <div id="reel" class="col-start-1 col-end-3 m-col-start-1 m-col-span-4 l-col-start-1 l-col-span-3">
+                <img src="img/reel:.gif" alt="">
             </div>
-    
-            <div id="hero-text2" class="xl-col-start-4 xl-col-end-7 l-col-start-4 l-col-end-7 col-start-1 col-end-3">
-                <h1>with a</h1>
+
+            <div id="hero-text2" class="l-col-start-4 l-col-end-9 m-col-start-5 m-col-span-4 col-start-3 col-end-5">
+                <h2>with a</h2>
             </div>
-    
-            <div id="hero-text3" class="xl-col-start-1 xl-col-end-9 l-col-start-1 l-col-end-9 col-start-1 col-end-5">
-                <h1>Graphic <span>Design</span> Edge</h1>
+
+            <div id="hero-text3" class="xl-col-start-1 xl-col-end-9 l-col-start-1 l-col-end-9 col-span-full">
+                <h2>Graphic <span>Design</span> Edge</h2>
             </div>
 
             <!-- <div class="hero-text col-span-full">
@@ -70,40 +71,36 @@
             </div> -->
         </section>
 
-        <section>
-            <div class="grid-con">
-                <div class="video-container l-col-start-1 l-col-end-13 xl-col-start-1 xl-col-end-13 col-span-full">
-                    <video id="video" class="video-player" src="img/footer-bg.mp4"></video>
-                    <div class="controls">
-                        <button id="play-pause" class="play-btn fa">
-                            <i id="play-icon" class="fas fa-play"></i> <!-- Play Icon -->
-                        </button>
-                        <div class="progress-container">
-                            <div id="progress" class="progress-bar"></div>
-                        </div>
-                        <input id="volume-slider" type="range" min="0" max="1" step="0.1" value="1"
-                            class="volume-slider">
-                        <button id="fullscreen" class="fullscreen-btn fa">
-                            <i class="fas fa-expand"></i> <!-- Fullscreen Icon -->
-                        </button>
-                    </div>
+        <div class="grid-con">
+            <section id="player-container" class="col-span-full">
+                <video controls preload="metadata" poster="images/placeholder.jpg">
+                    <source src="video/Napas_Polchai_Demoreel.webm" type="video/webm">
+                <p>Your browser does not support the video tag.</p>
+                </video>
+                <div class="video-controls hidden" id="video-controls">
+                    <button id="play-button"><i class="fa fa-play-circle-o"></i></button>
+                    <button id="pause-button"><i class="fa fa-pause-circle-o"></i></button>
+                    <button id="stop-button"><i class="fa fa-stop-circle-o"></i></button>
+                    <i class="fa fa-volume-up"></i>
+                    <input type="range" id="change-vol" step="0.05" min="0" max="1" value="1">
+                    <button id="full-screen"><i class="fa fa-arrows-alt"></i></button>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
-        <section class="grid-con hidden" id="about">
-            <div id="memoji" class="xl-col-start-2 xl-col-end-5 l-col-start-2 l-col-end-5">
+        <section class="grid-con" id="about">
+            <div id="memoji" class="l-col-start-2 l-col-end-6 m-col-start-2 m-col-end-6 hidden">
                 <img src="img/memoji.png" alt="">
             </div>
 
-            <div id="about-text" class="xl-col-start-6 xl-col-end-13 l-col-start-6 l-col-end-13 col-span-full">
+            <div id="about-text" class="l-col-start-6 l-col-end-13  m-col-start-6 m-col-end-13 col-span-full">
 
-                <div id="status-bar" class="xl-col-start-6 l-col-start-6 col-start-1">
+                <div id="status-bar">
                     <div id="status-indicator"></div>
                     <div id="status-text">Available</div>
                 </div>
 
-                <h2 class="xl-col-start-6 xl-col-end-13 l-col-start-6 l-col-end-13 col-span-full">
+                <h2>
                     From Nonthaburi, Thailand. Former Graphic <span>Designer </span>and Photographer turned to Web
                     <span>Designer </span>, with a
                     love for <span> design</span>. Wherever it is, I’d rather be on wheels.
@@ -125,10 +122,12 @@
             </div>
         </section> -->
 
-        <section id="bg-black">
-            <div class="grid-con content">
-                <div class="col-span-full l-col-start-1 l-col-span-8 skills">
-                    <img src="img/landing-desktop/THA MOCK2.png" alt="">
+        <section id="bg-black-1">
+            <div class="grid-con">
+                <div class="col-span-full l-col-start-1 l-col-span-8 m-col-start-1 m-col-span-8 skills" id="skill-1">
+                    <div class="ui-img-1">
+                        <img src="img/landing-desktop/THA MOCK2.png" alt="">
+                    </div>
                     <p>
                         <span class="bold"> Ui / UX Design - </span> 4 years of experience as a UI / UX designer. I
                         worked with many types of clients
@@ -136,8 +135,10 @@
                     </p>
                 </div>
 
-                <div class="col-span-full l-col-start-9 l-col-span-4 skills">
-                    <img src="img/landing-desktop/SWU.png" alt="">
+                <div class="col-span-full l-col-start-9 l-col-span-4 m-col-start-9 m-col-span-4 skills" id="skill-2">
+                    <div class="ui-img-1">
+                        <img src="img/landing-desktop/SWU.png" alt="">
+                    </div>
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
                         designer.
@@ -145,10 +146,10 @@
                 </div>
 
                 <div class="col-span-full fea-head">
-                    <h2><span class="colour">Featured </span><br> <span class="second-span">projects</span></h2>
+                    <h2><span class="colour">Featured</span><br><span class="move">projects</span></h2>
                 </div>
 
-                <div class="col-span-full l-col-start-1 l-col-span-8">
+                <div class="card col-span-full l-col-start-1 l-col-span-8 m-col-start-1 m-col-span-8">
                     <img src="img/landing-desktop/Welter-SEA.png" alt="">
                     <p>
                         <span class="bold">Ui / UX Design</span> - 4 years of experience as a UI / UX
@@ -157,7 +158,7 @@
                     </p>
                 </div>
 
-                <div class="col-span-full l-col-start-9 l-col-span-4">
+                <div class="card col-span-full l-col-start-9 l-col-span-4 m-col-start-9 m-col-span-4">
                     <img src="img/landing-desktop/NPD-project.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
@@ -165,7 +166,7 @@
                     </p>
                 </div>
 
-                <div class="xl-col-start-1 xl-col-end-7 l-col-start-1 l-col-end-7 col-span-full">
+                <div class="card  l-col-start-1 l-col-end-7 m-col-start-1 m-col-span-6 col-span-full">
                     <img src="img/landing-desktop/MEDPARK.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
@@ -173,7 +174,7 @@
                     </p>
                 </div>
 
-                <div class="xl-col-start-7 xl-col-end-13 l-col-start-7 l-col-end-13 col-span-full">
+                <div class="card l-col-start-7 l-col-end-13 m-col-start-7 m-col-span-6 col-span-full">
                     <img src="img/landing-desktop/SKY.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
@@ -181,7 +182,7 @@
                     </p>
                 </div>
 
-                <div class="xl-col-start-1 xl-col-end-5 l-col-start-1 l-col-end-5 col-span-full">
+                <div class="card l-col-start-1 l-col-end-5 m-col-start-1 m-col-span-5 col-span-full">
                     <img src="img/landing-desktop/Logo-ShopSabuy.png" alt="">
                     <p>
                         <span class="bold">Graphic Design - </span> Specializing in Illustration, then became a graphic
@@ -189,7 +190,7 @@
                     </p>
                 </div>
 
-                <div class="xl-col-start-5 xl-col-end-13 l-col-start-5 l-col-end-13 col-span-full">
+                <div class="card l-col-start-5 l-col-end-13 m-col-start-6 m-col-span-7 col-span-full">
                     <img src="img/landing-desktop/SLI.png" alt="">
                     <p>
                         <span class="bold">Ui / UX Design</span> - 4 years of experience as a UI / UX
@@ -197,15 +198,14 @@
                         Jewelry brands, and Insurance companies.
                     </p>
                 </div>
-
             </div>
         </section>
 
         <section class="prof-skill">
             <div class="grid-con">
-                <div class="col-span-full prof-text">
+                <div class="col-span-full l-col-start-1 l-col-span-5 m-col-start-1 m-col-span-5 prof-text">
                     <div class="text">
-                        <p class="spesh-p">EMPOWERING THROUGH EXPERTISE</p>
+                        <p class="spesh-p">EMPOWERING <br class="hide-desk">THROUGH EXPERTISE</p>
                         <h2><span>Professional Skills</span> and <span>Empathy</span></h2>
                         <p>
                             With four years of experience as a graphic designer before transitioning to UI design, I
@@ -214,26 +214,28 @@
                             and address user needs effectively.
                         </p>
                     </div>
-                    <img src="img/place-holder-img-3.png" alt="">
                 </div>
+
+                <img class="l-col-start-7 l-col-span-6 m-col-start-7 m-col-span-6 hide-mob"
+                    src="img/place-holder-img-3.png" alt="">
             </div>
+            <img class="hide-desk" src="img/place-holder-img-3.png" alt="">
         </section>
 
 
         <footer>
+            <video class="footer-vid" autoplay loop muted playsinline>
+                <source src="img/footer-bg.mp4" type="video/mp4">
+            </video>
             <div class="footer-con">
-                <h2>Have <br><span>an idea ?</span> </h2>
+                <h2>Have <br><span>an idea?</span> </h2>
                 <button class="tell">Tell Me</button>
 
                 <div class="contact">
                     <button id="btn-1">polchai.napas@gmail.com</button>
                     <button id="btn-2">+1 (416) 302 6763</button>
                 </div>
-
-
             </div>
-
-
         </footer>
     </main>
 
