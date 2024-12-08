@@ -49,12 +49,12 @@ function changeVolume() {
 // then it should exit and vice versa.
 function toggleFullScreen() {
     if (document.fullscreenElement) {
-      document.exitFullscreen();
+        document.exitFullscreen();
     } else if (document.webkitFullscreenElement) {
-      // Need this to support Safari
-      document.webkitExitFullscreen();
+        // Need this to support Safari
+        document.webkitExitFullscreen();
     } else if (playerCon.webkitRequestFullscreen) {
-      // Need this to support Safari
+        // Need this to support Safari
         playerCon.webkitRequestFullscreen();
     } else {
         playerCon.requestFullscreen();
@@ -65,15 +65,15 @@ function toggleFullScreen() {
 // if the video is paused, the controls must remain visible
 function hideControls() {
     if (player.paused) {
-      return;
-    } 
+        return;
+    }
     videoControls.classList.add('hide');
-  }
-  
-  // showControls displays the video controls
-  function showControls() {
+}
+
+// showControls displays the video controls
+function showControls() {
     videoControls.classList.remove('hide');
-  }
+}
 
 playButton.addEventListener("click", playVideo);
 pauseButton.addEventListener("click", pauseVideo);
@@ -85,3 +85,32 @@ videoControls.addEventListener('mouseenter', showControls);
 videoControls.addEventListener('mouseleave', hideControls);
 player.addEventListener('mouseenter', showControls);
 player.addEventListener('mouseleave', hideControls);
+
+
+const tl = gsap.timeline()
+
+tl.to('.hero', {
+    x: 0,
+    duration: .4
+}).to('.hero', {
+    opacity: 1,
+    duration: .4
+
+}).to('#memoji', {
+    x: 0,
+    opacity: 1,
+    duration: .4
+
+}).to('#about-text', {
+    x: 0,
+    opacity: 1,
+    duration: .4
+}, '-=.2')
+
+
+
+// gsap.to('.hero', {
+//     x: 0,
+//     opacity: 1,
+//     duration: .4
+// })

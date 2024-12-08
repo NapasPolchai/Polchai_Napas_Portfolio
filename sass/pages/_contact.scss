@@ -19,12 +19,21 @@ body {
         margin-bottom: 72px;
     }
 
+    .contact-text-bud {
+        font-size: 24px;
+        color: black;
+        opacity: 1;
+        margin-bottom: 24px;
+        width: 300px;
+    }
+
     .contact-text {
         font-size: 24px;
         color: black;
         opacity: 1;
         margin-bottom: 24px;
-    
+        width: 100%;
+
         h5 {
             font-size: 32px;
             font-weight: 400;
@@ -40,33 +49,39 @@ body {
     .single-line-form {
         margin-top: 72px;
     }
-    
+
     .form-group {
         display: flex;
         align-items: center;
         margin-bottom: 48px;
-        position: relative; /* For underline styling */
-        width: 100%; /* Ensure form-group spans full width */
+        position: relative;
+        /* For underline styling */
+        width: 100%;
+        /* Ensure form-group spans full width */
     }
-    
+
     .form-group::after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 100%; /* Full-width underline */
-        height: 1px; /* Underline thickness */
-        background-color: rgb(112, 112, 112, 0.16); /* Match existing color */
+        width: 100%;
+        /* Full-width underline */
+        height: 1px;
+        /* Underline thickness */
+        background-color: rgb(112, 112, 112, 0.16);
+        /* Match existing color */
     }
-    
+
     label {
         margin-right: 0px;
         font-size: 24px;
         font-weight: 400;
         opacity: 0.16;
-        white-space: nowrap; /* Keeps label on one line */
+        white-space: nowrap;
+        /* Keeps label on one line */
     }
-    
+
     input {
         border: none;
         outline: none;
@@ -74,35 +89,41 @@ body {
         font-size: 16px;
         padding: 16px;
     }
-    
+
     input:focus {
-        border-bottom: 2px solid #007bff; /* Highlight underline on focus */
+        border-bottom: 2px solid #007bff;
+        /* Highlight underline on focus */
     }
-    
-    #submit {
-        font-size: 72px;
-        padding: 16px 32px;
-        border-radius: 90px;
-        margin-top: 0px;
-        font-weight: 400;
-    }
-    
+
+
+
     button {
         color: white;
         border: none;
         font-size: 16px;
         cursor: pointer;
     }
-    
+
     button:hover {
         background-color: none;
     }
-    
-    #buttom-part {
+
+    #bottom-part {
         align-items: start;
         margin-top: 48px;
+
+        #btn-3 {
+            font-size: 48px;
+            font-weight: 300;
+            color: white;
+            background-color: #000;
+            padding: 16px 32px;
+            border-radius: 90px;
+            margin-top: 32px;
+            margin-left: 0px;
+        }
     }
-    
+
     #contact-memoji {
         margin-bottom: -7px;
         margin-top: 72px;
@@ -114,11 +135,11 @@ body {
     body {
         .hero-contact-text {
             margin-top: 128px;
-    
+
             h2 {
                 font-size: 72px;
                 font-weight: 400;
-    
+
                 img {
                     height: 72px;
                 }
@@ -130,7 +151,7 @@ body {
             color: black;
             opacity: 1;
             margin-bottom: 24px;
-        
+
             h5 {
                 font-size: 32px;
                 font-weight: 400;
@@ -144,9 +165,24 @@ body {
             }
         }
 
+        #bottom-part {
+            margin-top: 0px;
+            #btn-3 {
+                font-size: 72px;
+                font-weight: 300;
+                color: white;
+                margin: 0px 85px;
+                background-color: #000;
+                padding: 0px 85px;
+                border-radius: 90px;
+                margin-top: 128px;
+                margin-left: 0px;
+            }
+        }
+
         #contact-memoji {
             margin-bottom: -7px;
-            margin-top: -108px;
+            margin-top: 72px;
             margin-left: 725px;
         }
     }
