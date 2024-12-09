@@ -82,7 +82,7 @@ $projects = $db->query($projectQuery);
             class="gallery-img l-col-start-9 l-col-end-13 m-col-start-9 m-col-end-13 xl-col-start-9 xl-col-end-13 col-span-full">
         <img src="img/medpark-full.png" alt=""
             class="gallery-img l-col-start-1 l-col-end-13 m-col-start-1 m-col-end-13 xl-col-start-1 xl-col-end-13 col-span-full">
-    </section> ?>
+    </section>'?>
 
     <footer>
             <video class="footer-vid" autoplay loop muted playsinline>
